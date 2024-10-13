@@ -9,7 +9,14 @@ def index(request):
 
 def submitquery(request):
     q = request.GET["query"]
-    return HttpResponse(q)
+    try:
+        ans = eval(q)
+        mydictionary = {"q": q, "ans": ans, "error": False, "result": True}
+        print(ans)
+        return render(request, "index.html", context=mydictionary)
+    except:
+        mydictionary = {"error": True, "result": False}
+        return render(request, "index.html", context=mydictionary)
 
 
 # def submitquery(request):
