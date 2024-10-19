@@ -97,15 +97,25 @@
             style="rounded mx-auto d-block"
           />
           <div class="card-body">
-            <form method="GET" action="{% url 'submitquery'%}">
-              <div class="form-group">
+            <form method="GET" action="{% url 'getquery'%}">
+              <input list id="languages" class="form=-control">
+              <datalist id="languages">
+                <option value="Python">
+                <option value="PHP">
+                <option value="Perl">
+                <option value="C">
+                <option value="C++">
+                <option value="Java">
+                <option value="JavaScript">
+              </datalist>
+              {% comment %} <div class="form-group">
                 <input
                   type="search"
                   class="form-control"
                   name="query"
                   id="query"
                 />
-              </div>
+              </div>  {% endcomment %}
               <div class="row">
                 <div class="col-6">
                   <input
